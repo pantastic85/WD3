@@ -1,0 +1,26 @@
+body {
+	border-style: border-box;
+	margin: 0;
+}
+
+.logo {
+	width: 50px;
+}
+
+form {
+	margin: 0 auto 0 auto;
+	max-width: 20em;
+}
+
+.inputFields {
+	display: grid;
+}
+
+input {
+	border: 0;
+	margin: .5em;
+	background-color: rgb(228, 228, 228);
+	border-radius: 5px;
+	height: 1em;
+	padding: 1em;
+}
