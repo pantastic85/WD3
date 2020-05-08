@@ -31,17 +31,17 @@
             <input type="password"
                     id="pass1"
                     placeholder="Password"
-                    onblur="passEqual">
-            <input type="password"
+                    onblur="passEqual()">
+            <input type="password"ß
                     id="pass2"
                     placeholder="Confirm Password"
-                    onblur="passEqual">
+                    onblur="passEqual()">
             <div class="terms">
                     <input type="checkbox"
                            id="agreeToTerms">
                     <span>Agree to Terms</span>
             </div>
-            <div class="error_msg"></div>
+            <div id="error_msg"></div>
             <Button onclick="validateForm()">Submit</Button>
         </div>
         </fieldset>

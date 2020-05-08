@@ -8,7 +8,7 @@ function passEqual() {
 		} else {
 			pass1.setCustomValidity(`Passwords don't match`);
 			pass2.setCustomValidity(`Passwords don't match`);
-			error_msg.innerHTML = `Please re-enter passwords`;
+			error_msg.innerHTML = `Passwords don't match. Please re-enter passwords`;
 			return false;
 		}
 	}

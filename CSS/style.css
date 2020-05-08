@@ -24,3 +24,8 @@ input {
 	height: 1em;
 	padding: 1em;
 }
+
+#error_msg {
+	color: red;
+	padding: .5em;
+}
