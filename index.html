@@ -16,10 +16,12 @@
             <label for="firstName">First Name</label>
             <input type="text"
                     name="firstName"
-                    placeholder="First Name">
+                    placeholder="First Name"
+                    pattern="(?!fuck)[A-Za-z]{3,128}">
             <input type="text"
                     name="lastName"
-                    placeholder="Last Name">
+                    placeholder="Last Name"
+                    pattern="(?!fuck)[A-Za-z]{3,128}">
             <input type="email"
                     name="email1"
                     placeholder="Email">
@@ -38,7 +40,7 @@
                     <span>Agree to Terms</span>
             </div>
             <div class="error"></div>
-            <Button>Submit</Button>
+            <Button onclick="validateForm()">Submit</Button>
         </div>
         </fieldset>
     </form>
