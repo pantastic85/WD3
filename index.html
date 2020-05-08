@@ -9,37 +9,39 @@
 </head>
 <body>
     <img class="logo" src="./Images/goldleafLogo.svg" alt="Gold Leaf Co. Logo">
-    <form action="#">
+    <form action="">
         <fieldset>
         <legend>Registration</legend>
         <div class="inputFields">
-            <label for="firstName">First Name</label>
+            <label for="firstName" hidden>First Name</label>
             <input type="text"
-                    name="firstName"
+                    id="firstName"
                     placeholder="First Name"
                     pattern="(?!fuck)[A-Za-z]{3,128}">
             <input type="text"
-                    name="lastName"
+                    id="lastName"
                     placeholder="Last Name"
                     pattern="(?!fuck)[A-Za-z]{3,128}">
             <input type="email"
-                    name="email1"
+                    id="email1"
                     placeholder="Email">
             <input type="email"
-                    name="email2"
+                    id="email2"
                     placeholder="Confirm Email">
             <input type="password"
-                    name="password1"
-                    placeholder="Password">
+                    id="pass1"
+                    placeholder="Password"
+                    onblur="passEqual">
             <input type="password"
-                    name="password2"
-                    placeholder="Confirm Password">
+                    id="pass2"
+                    placeholder="Confirm Password"
+                    onblur="passEqual">
             <div class="terms">
                     <input type="checkbox"
-                           name="agreeToTerms">
+                           id="agreeToTerms">
                     <span>Agree to Terms</span>
             </div>
-            <div class="error"></div>
+            <div class="error_msg"></div>
             <Button onclick="validateForm()">Submit</Button>
         </div>
         </fieldset>
