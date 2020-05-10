@@ -4,45 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WD3 | Form Validation</title>
-    <link rel="stylesheet" href="./CSS/style.css">
-    <script src="./JS/script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/28de2d2858.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
 </head>
 <body>
-    <img class="logo" src="./Images/goldleafLogo.svg" alt="Gold Leaf Co. Logo">
+<header>
+    <div class="logo">
+            <img src="./images/goldleafLogo.svg" alt="Gold Leaf Co. Logo">
+            <h1>Gold Leaf Co.</h1>
+        </div>
+            <h2>Australian Super Fund</h2>
+</header>
     <form action="">
         <fieldset>
         <legend>Registration</legend>
+        <i id="help" class="far fa-question-circle">
+                <video autoplay loop muted >
+                        <source src="./video/helper.mp4">
+                </video>
+        </i>       
         <div class="inputFields">
-            <label for="firstName" hidden>First Name</label>
+        <div class="grouping">
+            <label for="firstName">First Name:</label>
             <input type="text"
                     id="firstName"
-                    placeholder="First Name"
-                    pattern="(?!fuck)[A-Za-z]{3,128}">
+                    name="firstName"
+                    placeholder="First Name*"
+                    pattern="[A-Za-z'-]{2,64}"
+                    title="Name can only contain letters"
+                    required
+                    autocomplete="off"
+                    onblur="checkName1()">
+                <i class="fas fa-user"></i>
+            <label for="lastName">Last Name:</label>        
             <input type="text"
                     id="lastName"
+                    name="lastName"
                     placeholder="Last Name"
-                    pattern="(?!fuck)[A-Za-z]{3,128}">
+                    pattern="[A-Za-z'-]{2,64}"
+                    title="Name can only contain letters."
+                    required
+                    autocomplete="off"
+                    onblur="checkName2()">
+                <i class="fas fa-user"></i>
+        </div>
+        <div class="grouping">
+        <label for="email1">Email:</label>
             <input type="email"
                     id="email1"
-                    placeholder="Email">
+                    name="email1"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,64}$"
+                    title="Please enter a valid email address. i.e. test@mail.com"
+                    required
+                    placeholder="Email*"
+                    autocomplete="off"
+                    onblur="emailEqual()">
+                <i class="fas fa-at"></i>
+        <label for="email2">Confirm Email:</label>
             <input type="email"
                     id="email2"
-                    placeholder="Confirm Email">
+                    name="email2"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,64}$"
+                    title="Please enter a valid email address. i.e. test@mail.com"
+                    required
+                    placeholder="Confirm Email*"
+                    autocomplete="off"
+                    onblur="emailEqual()">
+                <i class="fas fa-at"></i>
+        </div>
+        <div class="grouping">
+        <label for="pass1">Password:</label>
             <input type="password"
                     id="pass1"
-                    placeholder="Password"
+                    name="pass1"
+                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                    title="Password must be at least 8 characters, contain at least: 1 letter, 1 number, 1 special character."
+                    required
+                    placeholder="Password*"
                     onblur="passEqual()">
-            <input type="password"ß
+                <i class="fas fa-key"></i>
+        <label for="pass2">Confirm Password:</label>
+            <input type="password"
                     id="pass2"
-                    placeholder="Confirm Password"
+                    name="pass2"
+                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                    title="Password must be at least 8 characters, contain at least: 1 letter, 1 number, 1 special character."
+                    required
+                    placeholder="Confirm Password*"
                     onblur="passEqual()">
+                <i class="fas fa-key"></i>
+        </div>
+
             <div class="terms">
                     <input type="checkbox"
-                           id="agreeToTerms">
-                    <span>Agree to Terms</span>
+                           value="Agree"
+                           id="agreeToTerms"
+                           required>Agree to Terms
             </div>
             <div id="error_msg"></div>
-            <Button onclick="validateForm()">Submit</Button>
+            <Button id="submit" onclick="validateForm()" disabled>Submit</Button>
         </div>
         </fieldset>
     </form>

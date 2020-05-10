@@ -1,31 +1,171 @@
 body {
-	border-style: border-box;
+	box-sizing: border-box;
 	margin: 0;
+	background-color: rgb(29, 54, 90);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+	font-size: .75em;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-	width: 50px;
+	display: flex;
+	color: rgb(173, 132, 27);
+}
+
+.logo img {
+	width: 40px;
+	height: 40px;
+	margin: 5px 5px 0 5px;
+}
+
+h1 {
+	margin: 10px 0 0 0;
+	line-height: 1.5em;
+}
+
+h2 {
+	margin: 0 0 0 50px;
+	color: rgb(173, 132, 27);
 }
 
 form {
 	margin: 0 auto 0 auto;
-	max-width: 20em;
+	max-width: 19em;
+	background: linear-gradient(150deg, rgba(255, 255, 255, 0.3), rgb(173, 132, 27, .3), rgba(0, 0, 0, 0.3));
+	border-radius: 5px;
+	color: white;
+	box-shadow: 0px 5px 30px black;
+}
+
+fieldset {
+	position: relative;
+}
+
+#help {
+	position: absolute;
+	top: 7px;
+	left: 282px;
+	z-index: 99;
+}
+
+fieldset,
+legend {
+	border: none;
+	margin: 0;
+	padding: .5em 0;
+	text-align: center;
+}
+
+#help:hover video {
+	visibility: visible;
+	box-shadow: 0px 0px 100px black;
+}
+
+#help:hover {
+	color: goldenrod;
 }
 
 .inputFields {
-	display: grid;
+	padding: .5em;
 }
 
-input {
+.grouping {
+	text-align: center;
+	padding: 0 0 0.5em 0;
+}
+
+label {
+	display: none;
+}
+
+input:not([type="checkbox"]) {
 	border: 0;
-	margin: .5em;
+	width: 80%;
+	margin: .25em;
 	background-color: rgb(228, 228, 228);
 	border-radius: 5px;
 	height: 1em;
 	padding: 1em;
 }
 
-#error_msg {
+input:invalid {
 	color: red;
-	padding: .5em;
+	font-weight: bold;
+}
+
+input:valid {
+	border: 2px solid rgb(65, 199, 3);
+}
+
+input[type="password"]::after {
+	content: 'hi';
+	display: block;
+	border: 1px solid coral;
+	width: 10px;
+	height: 10px;
+}
+
+#error_msg {
+	color: orangered;
+	padding: 1em;
+	text-align: left;
+}
+
+button {
+	background-color: grey;
+	height: 2em;
+	width: 90%;
+	border: 0;
+	border-radius: 5px;
+	color: white;
+	font-size: 1em;
+}
+
+video {
+	position: absolute;
+	top: -5px;
+	left: -280px;
+	width: 300px;
+	border-radius: 5px;
+	visibility: hidden;
+	z-index: -1;
+}
+
+@media only screen and (min-width: 600px) {
+	form {
+		max-width: 25em;
+	}
+
+	legend {
+		font-size: 1.5em;
+	}
+
+	label {
+		display: block;
+		text-align: left;
+		margin-left: 1.75em;
+		margin-top: .5em;
+	}
+
+	input::placeholder {
+		visibility: hidden;
+	}
+
+	#help {
+		top: 15px;
+		left: 360px;
+		z-index: 99;
+		font-size: 1.5em;
+	}
+
+	video {
+		top: -15px;
+		left: -360px;
+		width: 400px;
+	}
 }
