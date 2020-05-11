@@ -11,101 +11,93 @@
 <body>
 <header>
     <div class="logo">
-            <img src="./images/goldleafLogo.svg" alt="Gold Leaf Co. Logo">
-            <h1>Gold Leaf Co.</h1>
-        </div>
-            <h2>Australian Super Fund</h2>
+        <img src="./images/goldleafLogo.svg" alt="Gold Leaf Co. Logo">
+        <h1>Gold Leaf Co.</h1>
+    </div>
+    <h2>Australian Super Fund</h2>
 </header>
     <form action="">
         <fieldset>
-        <legend>Registration</legend>
-        <i id="help" class="far fa-question-circle"></i>
+            <legend>Registration</legend>
+            <i id="help" class="far fa-question-circle"></i>
                 <video autoplay loop muted >
-                        <source src="./video/helper.mp4">
+                    <source src="./video/helper.mp4">
                 </video>
-        </i>       
-        <div class="inputFields">
-        <div class="grouping">
-            <label for="firstName">First Name:</label>
-            <input type="text"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="First Name*"
-                    pattern="[A-Za-z'-]{2,64}"
-                    title="Name can only contain letters"
-                    required
-                    autocomplete="off"
-                    onblur="checkName1()">
-
-            <label for="lastName">Last Name:</label>   
-            <input type="text"
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Last Name*"
-                    pattern="[A-Za-z'-]{2,64}"
-                    title="Name can only contain letters."
-                    required
-                    autocomplete="off"
-                    onblur="checkName2()">
-
-        </div>
-        <div class="grouping">
-        <label for="email1">Email:</label>
-            <input type="email"
-                    id="email1"
-                    name="email1"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,64}$"
-                    title="Please enter a valid email address. i.e. test@mail.com"
-                    required
-                    placeholder="Email*"
-                    autocomplete="off"
-                    onblur="emailEqual()">
-
-        <label for="email2">Confirm Email:</label>
-            <input type="email"
-                    id="email2"
-                    name="email2"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,64}$"
-                    title="Please enter a valid email address. i.e. test@mail.com"
-                    required
-                    placeholder="Confirm Email*"
-                    autocomplete="off"
-                    onblur="emailEqual()">
-
-        </div>
-        <div class="grouping">
-        <label for="pass1">Password:</label>
-            <input type="password"
-                    id="pass1"
-                    name="pass1"
-                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-                    title="Password must be at least 8 characters, contain at least: 1 letter, 1 number, 1 special character."
-                    required
-                    placeholder="Password*"
-                    onblur="passEqual()">
-
-        <label for="pass2">Confirm Password:</label>
-            <input type="password"
-                    id="pass2"
-                    name="pass2"
-                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-                    title="Password must be at least 8 characters, contain at least: 1 letter, 1 number, 1 special character."
-                    required
-                    placeholder="Confirm Password*"
-                    onblur="passEqual()">
-
-        </div>
-
-            <div class="terms">
+            </i>       
+            <div class="inputFields">
+                <div class="grouping">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" 
+                        id="firstName" 
+                        name="firstName" 
+                        placeholder="First Name*" 
+                        pattern="[A-Za-z'-]{2,64}" 
+                        title="Name can only contain letters" 
+                        required autocomplete="off" 
+                        onblur="checkName1()">   
+                    <label for="lastName">Last Name:</label>
+                    <input type="text"
+                        id="lastName"
+                        name="lastName"
+                        placeholder="Last Name*"
+                        pattern="[A-Za-z'-]{2,64}"
+                        title="Name can only contain letters."
+                        required
+                        autocomplete="off"
+                        onblur="checkName2()">
+                </div>
+                <div class="grouping">
+                    <label for="email1">Email:</label>
+                    <input type="email"
+                        id="email1"
+                        name="email1"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,64}$"
+                        title="Please enter a valid email address. i.e. test@mail.com"
+                        required
+                        placeholder="Email*"
+                        autocomplete="off"
+                        onblur="emailEqual()">
+                    <label for="email2">Confirm Email:</label>
+                    <input type="email"
+                        id="email2"
+                        name="email2"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,64}$"
+                        title="Please enter a valid email address. i.e. test@mail.com"
+                        required
+                        placeholder="Confirm Email*"
+                        autocomplete="off"
+                        onblur="emailEqual()">
+                </div>
+                <div class="grouping">
+                    <label for="pass1">Password:</label>
+                    <input type="password"
+                        id="pass1"
+                        name="pass1"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                        title="Password must be at least 8 characters, contain at least: 1 letter, 1 number, 1 special character."
+                        required
+                        placeholder="Password*"
+                        onblur="passEqual()">
+                    <label for="pass2">Confirm Password:</label>
+                    <input type="password"
+                        id="pass2"
+                        name="pass2"
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+                        title="Password must be at least 8 characters, contain at least: 1 letter, 1 number, 1 special character."
+                        required
+                        placeholder="Confirm Password*"
+                        onblur="passEqual()">
+                </div>
+                <div class="terms">
                     <input type="checkbox"
-                           value="Agree"
-                           id="agreeToTerms"
-                           required>
-                <span>Agree to Terms</span>
+                        value="Agree"
+                        id="agreeToTerms"
+                        required>
+                    <span>Agree to Terms</span>
+                </div>
+                <div id="error_msg"></div>
+                <Button id="submit" onclick="validateForm()" disabled>Submit</Button>
             </div>
-            <div id="error_msg"></div>
-            <Button id="submit" onclick="validateForm()" disabled>Submit</Button>
-        </div>
         </fieldset>
     </form>
 </body>
