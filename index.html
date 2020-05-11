@@ -19,7 +19,7 @@
     <form action="">
         <fieldset>
         <legend>Registration</legend>
-        <i id="help" class="far fa-question-circle">
+        <i id="help" class="far fa-question-circle"></i>
                 <video autoplay loop muted >
                         <source src="./video/helper.mp4">
                 </video>
@@ -36,18 +36,18 @@
                     required
                     autocomplete="off"
                     onblur="checkName1()">
-                <i class="fas fa-user"></i>
-            <label for="lastName">Last Name:</label>        
+
+            <label for="lastName">Last Name:</label>   
             <input type="text"
                     id="lastName"
                     name="lastName"
-                    placeholder="Last Name"
+                    placeholder="Last Name*"
                     pattern="[A-Za-z'-]{2,64}"
                     title="Name can only contain letters."
                     required
                     autocomplete="off"
                     onblur="checkName2()">
-                <i class="fas fa-user"></i>
+
         </div>
         <div class="grouping">
         <label for="email1">Email:</label>
@@ -60,7 +60,7 @@
                     placeholder="Email*"
                     autocomplete="off"
                     onblur="emailEqual()">
-                <i class="fas fa-at"></i>
+
         <label for="email2">Confirm Email:</label>
             <input type="email"
                     id="email2"
@@ -71,7 +71,7 @@
                     placeholder="Confirm Email*"
                     autocomplete="off"
                     onblur="emailEqual()">
-                <i class="fas fa-at"></i>
+
         </div>
         <div class="grouping">
         <label for="pass1">Password:</label>
@@ -83,7 +83,7 @@
                     required
                     placeholder="Password*"
                     onblur="passEqual()">
-                <i class="fas fa-key"></i>
+
         <label for="pass2">Confirm Password:</label>
             <input type="password"
                     id="pass2"
@@ -93,14 +93,15 @@
                     required
                     placeholder="Confirm Password*"
                     onblur="passEqual()">
-                <i class="fas fa-key"></i>
+
         </div>
 
             <div class="terms">
                     <input type="checkbox"
                            value="Agree"
                            id="agreeToTerms"
-                           required>Agree to Terms
+                           required>
+                <span>Agree to Terms</span>
             </div>
             <div id="error_msg"></div>
             <Button id="submit" onclick="validateForm()" disabled>Submit</Button>

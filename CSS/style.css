@@ -1,7 +1,7 @@
 body {
-	box-sizing: border-box;
-	margin: 0;
 	background-color: rgb(29, 54, 90);
+	margin: 0;
+	box-sizing: border-box;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -14,7 +14,7 @@ header {
 
 .logo {
 	display: flex;
-	color: rgb(173, 132, 27);
+	color: goldenrod;
 }
 
 .logo img {
@@ -71,26 +71,30 @@ legend {
 }
 
 .inputFields {
-	padding: .5em;
+	padding: 0;
 }
 
 .grouping {
 	text-align: center;
-	padding: 0 0 0.5em 0;
+	margin: 1em;
+	position: relative;
+	box-sizing: border-box;
 }
 
 label {
 	display: none;
+	position: relative;
 }
 
 input:not([type="checkbox"]) {
 	border: 0;
-	width: 80%;
-	margin: .25em;
+	width: 100%;
+	margin: .25em 0;
 	background-color: rgb(228, 228, 228);
 	border-radius: 5px;
 	height: 1em;
-	padding: 1em;
+	padding: 1.5em;
+	box-sizing: border-box;
 }
 
 input:invalid {
@@ -102,28 +106,21 @@ input:valid {
 	border: 2px solid rgb(65, 199, 3);
 }
 
-input[type="password"]::after {
-	content: 'hi';
-	display: block;
-	border: 1px solid coral;
-	width: 10px;
-	height: 10px;
-}
-
 #error_msg {
 	color: orangered;
-	padding: 1em;
+	margin: .75em 2.75em;
 	text-align: left;
 }
 
 button {
 	background-color: grey;
 	height: 2em;
-	width: 90%;
+	width: 80%;
 	border: 0;
 	border-radius: 5px;
 	color: white;
 	font-size: 1em;
+	margin-bottom: 1em;
 }
 
 video {
@@ -136,7 +133,53 @@ video {
 	z-index: -1;
 }
 
+label[for="firstName"]::before,
+label[for="lastName"]::before {
+	content: '\f007';
+	z-index: 100;
+	font-family: "FontAwesome";
+	position: absolute;
+	top: 35px;
+	left: 322px;
+	color: gray;
+}
+
+label[for="email1"]::before,
+label[for="email2"]::before {
+	content: '\f1fa';
+	z-index: 100;
+	font-family: "FontAwesome";
+	position: absolute;
+	top: 35px;
+	left: 322px;
+	color: gray;
+}
+
+label[for="pass1"]::before,
+label[for="pass2"]::before {
+	content: '\f084';
+	z-index: 100;
+	font-family: "FontAwesome";
+	position: absolute;
+	top: 35px;
+	left: 322px;
+	color: gray;
+}
+
 @media only screen and (min-width: 600px) {
+	header {
+		font-size: 1em;
+	}
+
+	.logo img {
+		width: 50px;
+		height: 50px;
+	}
+
+	h2 {
+		margin: 0 0 0 63px;
+	}
+
 	form {
 		max-width: 25em;
 	}
@@ -148,8 +191,16 @@ video {
 	label {
 		display: block;
 		text-align: left;
-		margin-left: 1.75em;
+		margin-left: .75em;
 		margin-top: .5em;
+		margin-bottom: .2em;
+		font-size: 1em;
+	}
+
+	input:not([type="checkbox"]),
+	button {
+		width: 350px;
+		height: 40px;
 	}
 
 	input::placeholder {
@@ -167,5 +218,18 @@ video {
 		top: -15px;
 		left: -360px;
 		width: 400px;
+	}
+
+	.terms {
+		margin: 2em;
+	}
+
+	.terms input {
+		width: 20px;
+		height: 20px;
+	}
+
+	.terms span {
+		font-size: 1.25em;
 	}
 }
